@@ -587,9 +587,6 @@ button{
 
 /* = Text Widths
 -------------------------------------------------------------- */
-.text-w-80{
-	max-width:80%;
-}
 .text-w-50{
 	max-width:50%;
 }
@@ -873,6 +870,25 @@ h1,h2,h3,h4,h5,h6{
 .h1-产品定制服务-style{
 	font-size:60px;
 }
+.img-8-style{
+	height:276px;
+	width:511px;
+}
+.img-highlights-style{
+	height:276px;
+}
+.img-7-style{
+	height:276px;
+}
+.h1-l101食堂-style{
+	font-size:80px;
+}
+.img-img-02-style{
+	width:600px;
+}
+.p-events-style{
+	font-size:20px;
+}
 
 /* = Colour
 -------------------------------------------------------------- */
@@ -897,6 +913,8 @@ h1,h2,h3,h4,h5,h6{
 	--swatch-var-2327:#FF375F;
 	
 	--swatch-var-1927:#008F51;
+	
+	--swatch-var-2031:#D90000;
 	
 }
 
@@ -924,14 +942,17 @@ h1,h2,h3,h4,h5,h6{
 .tc-7376{
 	color:var(--swatch-var-7376)!important;
 }
+.tc-2031{
+	color:var(--swatch-var-2031)!important;
+}
 .tc-4494{
 	color:var(--swatch-var-4494)!important;
 }
-.tc-2327{
-	color:var(--swatch-var-2327)!important;
-}
 .tc-6691{
 	color:var(--swatch-var-6691)!important;
+}
+.tc-2327{
+	color:var(--swatch-var-2327)!important;
 }
 
 /* Button colour styles */
@@ -960,6 +981,10 @@ h1,h2,h3,h4,h5,h6{
 	background:#000000!important;
 	color:#FFFFFF!important;
 }
+.wire-btn-c-3409{
+	color:var(--swatch-var-3409)!important;
+	border-color:var(--swatch-var-3409)!important;
+}
 .wire-btn-c-6691{
 	color:var(--swatch-var-6691)!important;
 	border-color:var(--swatch-var-6691)!important;
@@ -973,11 +998,11 @@ h1,h2,h3,h4,h5,h6{
 .ltc-6728:hover{
 	color:#CCCCCC!important;
 }
-.ltc-2327{
-	color:var(--swatch-var-2327)!important;
+.ltc-3409{
+	color:var(--swatch-var-3409)!important;
 }
-.ltc-2327:hover{
-	color:#CC042C!important;
+.ltc-3409:hover{
+	color:#0000CC!important;
 }
 
 /* Bloc image backgrounds */
@@ -1002,9 +1027,6 @@ url("img/dj.webp") 2x);
 url("img/decks.webp") 2x);background-image: image-set(url("img/decks.jpg") 1x,
 url("img/decks.jpg") 2x,url("img/decks.webp") 1x,
 url("img/decks.webp") 2x);
-}
-.bg-总{
-	background-image:url("img/%E6%80%BB.png");
 }
 .bg-L101音乐{
 	background-image:url("img/L101%E9%9F%B3%E4%B9%90.png");
@@ -1043,13 +1065,6 @@ url("img/IMG_7766.HEIC.webp") 2x);background-image: image-set(url("img/IMG_7766.
 url("img/IMG_7766.HEIC.JPG") 2x,url("img/IMG_7766.HEIC.webp") 1x,
 url("img/IMG_7766.HEIC.webp") 2x);
 }
-.bg-IMG-7225{
-	background-image:url("img/IMG_7225.png");
-	background-image: -webkit-image-set(url("img/IMG_7225.webp") 1x,
-url("img/IMG_7225.webp") 2x);background-image: image-set(url("img/IMG_7225.png") 1x,
-url("img/IMG_7225.png") 2x,url("img/IMG_7225.webp") 1x,
-url("img/IMG_7225.webp") 2x);
-}
 .bg-wallhaven-r721qq{
 	background-image:url("img/wallhaven-r721qq.jpg");
 	background-image: -webkit-image-set(url("img/wallhaven-r721qq.webp") 1x,
@@ -1057,12 +1072,14 @@ url("img/wallhaven-r721qq.webp") 2x);background-image: image-set(url("img/wallha
 url("img/wallhaven-r721qq.jpg") 2x,url("img/wallhaven-r721qq.webp") 1x,
 url("img/wallhaven-r721qq.webp") 2x);
 }
-.bg-IMG-7225-201080{
-	background-image:url("img/IMG_7225%201080.png");
-	background-image: -webkit-image-set(url("img/IMG_7225%201080.webp") 1x,
-url("img/IMG_7225%201080.webp") 2x);background-image: image-set(url("img/IMG_7225%201080.png") 1x,
-url("img/IMG_7225%201080.png") 2x,url("img/IMG_7225%201080.webp") 1x,
-url("img/IMG_7225%201080.webp") 2x);
+.bg-截屏2023-11-24-2010-21-02{
+	background-image:url("img/%E6%88%AA%E5%B1%8F2023-11-24%2010.21.02.png");
+}
+.bg-食堂2{
+	background-image:url("img/%E9%A3%9F%E5%A0%822.png");
+}
+.bg-老孙-副本{
+	background-image:url("img/%E8%80%81%E5%AD%99_%E5%89%AF%E6%9C%AC.png");
 }
 
 /* = Custom Bric Data

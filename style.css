@@ -936,8 +936,8 @@ h1,h2,h3,h4,h5,h6{
 .tc-6728{
 	color:var(--swatch-var-6728)!important;
 }
-.tc-3409{
-	color:var(--swatch-var-3409)!important;
+.tc-2327{
+	color:var(--swatch-var-2327)!important;
 }
 .tc-7376{
 	color:var(--swatch-var-7376)!important;
@@ -951,8 +951,8 @@ h1,h2,h3,h4,h5,h6{
 .tc-6691{
 	color:var(--swatch-var-6691)!important;
 }
-.tc-2327{
-	color:var(--swatch-var-2327)!important;
+.tc-3409{
+	color:var(--swatch-var-3409)!important;
 }
 
 /* Button colour styles */
@@ -1072,14 +1072,11 @@ url("img/wallhaven-r721qq.webp") 2x);background-image: image-set(url("img/wallha
 url("img/wallhaven-r721qq.jpg") 2x,url("img/wallhaven-r721qq.webp") 1x,
 url("img/wallhaven-r721qq.webp") 2x);
 }
-.bg-截屏2023-11-24-2010-21-02{
-	background-image:url("img/%E6%88%AA%E5%B1%8F2023-11-24%2010.21.02.png");
-}
 .bg-食堂2{
 	background-image:url("img/%E9%A3%9F%E5%A0%822.png");
 }
-.bg-老孙-副本{
-	background-image:url("img/%E8%80%81%E5%AD%99_%E5%89%AF%E6%9C%AC.png");
+.bg-游戏开发部{
+	background-image:url("img/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E9%83%A8.JPG");
 }
 
 /* = Custom Bric Data

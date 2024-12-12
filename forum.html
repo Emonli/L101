@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css?5818">
+	<link rel="stylesheet" type="text/css" href="style.css?577">
+	<link rel="stylesheet" type="text/css" href="./css/animate.min.css?9026">
+	<link rel="stylesheet" type="text/css" href="./css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/feather.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800,40&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <title>forum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .message {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .message .username {
+            font-weight: bold;
+        }
+        .message .timestamp {
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <!-- Preloader -->
+        <div id="page-loading-blocs-notifaction" class="page-preloader"></div>
+        <!-- Preloader END -->
+
+
+        <!-- Main container -->
+        <div class="page-container">
+        <!-- navigation -->
+        <div class="bloc bgc-3409 d-bloc" id="navigation">
+            <div class="container bloc-sm">
+                <div class="row">
+                    <div class="text-start col-lg-2 align-self-center mb-0 col-md-3 col-sm-4 col-10">
+                        <a href="index.html" class="a-btn a-block ltc-6728 logo-style">web101</a>
+                    </div>
+                    <div class="text-lg-center text-center col-lg-8 col-md-6 col-sm-4 col-2">
+                        <nav class="navbar navbar-light row navbar-expand-md">
+                            <div class="container-fluid flex-column">
+                                <button id="nav-toggle" type="button" class="ui-navbar-toggler navbar-toggler border-0 p-0" data-bs-toggle="collapse" data-bs-target=".navbar-16713" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"><svg height="32" viewBox="0 0 32 32" width="32"><path class="svg-menu-icon  " d="m2 9h28m-28 7h28m-28 7h28"></path></svg></span>
+                                </button>
+                                <div class="collapse navbar-collapse navbar-16713 special-dropdown-nav">
+                                        <ul class="site-navigation nav navbar-nav mx-auto justify-content-center uppercase-text">
+                                            <li class="nav-item">
+                                                <a href="index.html" class="nav-link a-btn ltc-6728">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="index.html" class="nav-link a-btn ltc-6728">Events</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="index.html" class="nav-link a-btn ltc-6728">Bands</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="faqs.html" class="nav-link a-btn ltc-6728">FAQ</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="contact.html" class="nav-link a-btn ltc-6728">Contact Us</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="text-start col-lg-2 align-self-center col-md-3 col-sm-4">
+                            <a href="https://afdian.com/a/EmonLi/plan" class="btn btn-sq float-lg-end w-100 btn-c-7376">赞助<br></a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- navigation END -->
+        
+        </header>
+
+    <h1>英才论坛Beta</h1>
+    <div id="message-list">
+        <!-- 留言列表 -->
+    </div>
+
+    <h2>添加留言</h2>
+    <div style="color: mediumvioletred;"><p>留言内容请遵守相关法律法规，不得发表不当言论。</p></div>
+    <form id="message-form">
+        <input type="text" id="username" placeholder="用户名" required>
+        <textarea rows="5" cols="50" id="content" placeholder="写点什么吧" required maxlength="200" required></textarea>
+        <div id="char-count">最多输入 200 字</div>
+        <button type="submit">提交</button>
+    </form>
+
+    <script>
+        const apiUrl = 'https://111.161.122.206:58050/messages'; // 后端API地址
+
+        // 获取留言列表并显示
+        function fetchMessages() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const messageList = document.getElementById('message-list');
+                    messageList.innerHTML = ''; // 清空当前内容
+
+                    data.messages.forEach(message => {
+                        const div = document.createElement('div');
+                        div.className = 'message';
+                        div.innerHTML = `
+                            <div class="username">${message.username}</div>
+                            <div class="content">${message.content}</div>
+                            <div class="timestamp">${message.timestamp}</div>
+                        `;
+                        messageList.appendChild(div);
+                    });
+                })
+                .catch(error => console.error('Error fetching messages:', error));
+        }
+
+        // 添加留言
+        document.getElementById('message-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表单提交的默认行为
+
+            const username = document.getElementById('username').value;
+            const content = document.getElementById('content').value;
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, content })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    fetchMessages(); // 更新留言列表
+                    document.getElementById('message-form').reset(); // 清空表单
+                })
+                .catch(error => console.error('Error adding message:', error));
+        });
+
+        // 页面加载时获取留言列表
+        fetchMessages();
+    </script>
+</body>
+</html>
